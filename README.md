@@ -1,2 +1,2 @@
-# swupz
-I like making movies, but programming is my second favourite hobby.
+# Mine tidligere prosjekter
+Her har du et utsnitt av det jeg har gjort før.

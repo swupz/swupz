@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paint</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: antiquewhite;
+        }
+        canvas {
+            margin: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #penselStr {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<canvas id="lerret" height="50px" width="50px">Bruk Chrome idiot.</canvas>
+<p id="penselStr">b</p>
+
+<script>
+    let lerret = document.getElementById("lerret");
+    let ctx = lerret.getContext("2d");
+
+    let lerretHoyde = window.innerHeight, lerretBredde = window.innerWidth;
+    lerret.width = lerretBredde; // Velger høyde og lengde på lerret
+    lerret.height = lerretHoyde;
+    ctx.fillStyle = "rgba(255, 255, 255, 1)";
+    ctx.fillRect(0, 0, lerretBredde, lerretHoyde);
+    let bound = lerret.getBoundingClientRect();
+
+    lerret.addEventListener("mousemove", mouseMove, false); // Vil se etter når musen beveger seg.
+    lerret.addEventListener("mousedown", mouseDown, false);
+    lerret.addEventListener("mouseup", mouseUp, false);
+    lerret.addEventListener("mouseleave", mouseLeave, false);
+    lerret.addEventListener("wheel", strPensel, false);
+
+
+    let penselVelger = 0, penselValg = [2, 4, 6, 8, 10],  penselStyle, siste_e = [], deltY;
+    function strPensel(e) {
+        deltY = e.deltaY;
+        siste_e.push = deltY;
+        if (deltY === 0) {
+            let verdi = siste_e.length - 1;
+            console.log("Verdi: " + verdi);
+            if (siste_e[verdi]  > 0) {
+                penselVelger++;
+                if(penselVelger === 4) {
+                    penselVelger = 0;
+                }
+            } else {
+                penselVelger--;
+                if(penselVelger === 0) {
+                    penselVelger = 4;
+                }
+            }
+        }
+
+        penselStyle = penselValg[penselVelger];
+        console.log(penselVelger, penselStyle, deltY);
+
+        document.getElementById("penselStr").style.top = lerretHoyde / 2;
+        document.getElementById("penselStr").style.left = lerretBredde / 2;
+        document.getElementById("penselStr").innerHTML = penselStyle;
+    }
+
+
+
+
+    let clickX = [], clickY = [], clickDrag = [], paint = false, mouseX, mouseY, saveSize = [];
+
+    function addclick(x, y, dragging, size) {
+        clickX.push(x);
+        clickY.push(y);
+        clickDrag.push(dragging);
+        saveSize.push(size);
+    }
+
+    function redraw() {
+        ctx.fillStyle = "#FFFFFF";
+        ctx.fillRect(0, 0, lerret.width, lerret.height);
+
+        ctx.strokeStyle = "black";
+        ctx.lineJoin = "round";
+
+        for (var i = 0; i < clickX.length; i++) {
+            saveSize[i];
+            ctx.beginPath();
+
+
+            if (clickDrag[i] && i) {
+                ctx.moveTo(clickX[i - 1], clickY[i - 1]);
+            } else {
+                ctx.moveTo(clickX[i] - 1, clickY[i]);
+            }
+            ctx.lineTo(clickX[i], clickY[i]);
+            ctx.stroke();
+        }
+    }
+
+    function mouseDown(e) {
+        mouseX = e.pageX - bound.left - lerret.clientLeft;
+        mouseY = e.pageY - bound.top - lerret.clientTop;
+
+        paint = true;
+        addclick(mouseX, mouseY, false, penselStyle);
+        redraw();
+    }
+
+    function mouseMove(e) {
+        if(paint) {
+            mouseX = e.pageX - bound.left - lerret.clientLeft;
+            mouseY = e.pageY - bound.top - lerret.clientTop;
+            addclick(mouseX, mouseY, true, penselStyle);
+            redraw();
+        }
+    }
+
+    function mouseUp() {
+        paint = false;
+    }
+
+    function mouseLeave() {
+        paint = false;
+    }
+</script>
+</body>
+</html>

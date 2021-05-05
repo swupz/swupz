@@ -1,0 +1,140 @@
+body {
+    background-color: #eee;
+    margin: 0;
+}
+#meny {
+    position: sticky;
+    left: 0;
+    top: 0;
+    background-color: #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#midtstill {
+    margin-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 63%;
+}
+
+#meny a {
+    text-decoration: none;
+}
+
+#hovedtittel img {
+    width: 40px;
+    padding-right: 10px;
+    font-size: 300%;
+}
+
+#hovedtittel h1 {
+    display: inline;
+    font-size: 300%;
+    font-family: AcmeFont, Helvetica, sans-serif;
+    color: black;
+
+}
+
+#meny_innhold {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+}
+
+.meny_valg {
+    border: 1px #eee solid;
+    padding: 10px;
+}
+
+.meny_valg:hover {
+    border-bottom: 1px #326273 solid;
+
+}
+
+.meny_link {
+    text-decoration: none;
+    color:#5c9ead;
+    display: inline;
+}
+
+.meny_link:hover {
+    color: #326273;
+}
+
+
+#meny_innpak {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    margin: auto;
+    text-align: center;
+}
+#overskrift {
+    text-align: center;
+    padding: 5px;
+}
+#linjebreak2 {
+    width: 500px;
+    border-top: 2px #e39774 solid;
+    margin: auto;
+}
+#meny_innpak a {
+    text-decoration: none;
+    color: #5c9ead;
+    flex-basis: 350px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border: 2px #5c9ead solid;
+    font-size: 55px;
+    margin-top: 50px;
+}
+#meny_innpak a:hover {
+    color: #326273;
+    border: 2px #326273 solid;
+    font-family: Magneto, Helvetica, sans-serif;
+    text-shadow: 2px 0 white;
+    font-size: 53px;
+}
+.innpak {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+}
+.leggtil {
+    flex-basis: 50%;
+}
+.leggtil input[type=text], .leggtil input[type=number], .leggtil textarea {
+    border: 1px #e39774 solid;
+    padding: 5px;
+    width: 125%;
+}
+.endre {
+    flex-basis: 50%;
+}
+.endre table {
+    border-collapse: collapse;
+}
+.endre th, .endre td {
+    border-bottom: 1px black solid;
+    padding: 3px;
+}
+.endre th {
+    background-color: #e39774;
+    padding: 4px 8px 4px 8px;
+}
+.endre tr:nth-child(odd) {
+    background-color: white;
+}
+.endre tr:hover {
+    background-color: #e39774;
+}

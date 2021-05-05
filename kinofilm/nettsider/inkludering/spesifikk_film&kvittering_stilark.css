@@ -1,0 +1,137 @@
+body {
+    background-color: #eee;
+    margin: 0;
+}
+
+#meny {
+    position: sticky;
+    left: 0;
+    top: 0;
+    background-color: #eee;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#midtstill {
+    margin-left: 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 63%;
+}
+
+#meny a {
+    text-decoration: none;
+}
+
+#hovedtittel img {
+    width: 40px;
+    padding-right: 10px;
+    font-size: 300%;
+}
+
+#hovedtittel h1 {
+    display: inline;
+    font-size: 300%;
+    font-family: AcmeFont, Helvetica, sans-serif;
+    color: black;
+
+}
+
+#meny_innhold {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 400px;
+}
+
+.meny_valg {
+    border: 1px #eee solid;
+    padding: 10px;
+}
+
+.meny_valg:hover {
+    border-bottom: 1px #326273 solid;
+
+}
+
+.meny_link {
+    text-decoration: none;
+    color:#5c9ead;
+    display: inline;
+}
+
+.meny_link:hover {
+    color: #326273;
+}
+
+#pakkinn_alt {
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+}
+#bilde img{
+    width: 400px;
+    height: 600px;
+}
+#pakkinn {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: flex-start;
+ }
+#tittel {
+    font-size: 200%;
+    font-family: AcmeFont, Helvetica, sans-serif;
+}
+#linjebreak {
+    width: 70px;
+    border-top: 2px #e39774 solid;
+    padding-top: 5px;
+}
+#tid {
+    float: left;
+    padding-top: 5px;
+    font-style: oblique;
+}
+#billett {
+    padding-top: 5px;
+}
+#pris {
+    padding-top: 5px;
+}
+#sjanger {
+    padding-top: 5px;
+}
+#utgar {
+    padding-top: 5px;
+}
+#sprak {
+    padding-top: 5px;
+}
+#bskr {
+    padding-top: 5px;
+}
+#reg {
+    padding-top: 5px;
+}
+#sal {
+    padding-top: 5px;
+}
+
+
+#kvittering_body {
+    text-align: center;
+}
+#kortinfo {
+    display: inline;
+}
+#kortkjop {
+    margin: auto;
+    text-align: start;
+}
+#feilmelding {
+    font-weight: bold;
+}

@@ -1,0 +1,114 @@
+body {
+    background-color: #eee;
+    margin: 0;
+}
+#login_innpak {
+    display: flex;
+    flex-flow: row wrap;
+    width: 60%;
+    margin: auto;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-top: 6%;
+}
+
+#hoyre {
+    flex-basis: 30%;
+    height: 340px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#hoyre h3 {
+    font-size: 200%;
+    font-family: AcmeFont, Arial, sans-serif;
+    color: #e39774;
+}
+#hoyre a {
+    color: #5c9ead;
+    text-decoration: none;
+    font-size: 150%;
+}
+#hoyre a:hover {
+    color: #326273;
+}
+#venstre {
+    flex-basis: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+.brukerpassord {
+    text-align: center;
+    font-size: larger;
+    font-style: oblique;
+}
+.brukerpassord input[type=text], input[type=email] {
+    width: 110%;
+    padding: 2px;
+    border: 1px #e39774 solid;
+}
+#passord_login {
+    width: 110%;
+    padding: 2px;
+    border: 1px #e39774 solid;
+}
+#passord_nybruker {
+    width: 200%;
+    padding: 4px;
+    border: 1px #e39774 solid;
+}
+#knapp {
+    color: white;
+    background-color: #e39774;
+    text-align: center;
+}
+#knapp:hover {
+    color: white;
+    background-color: #326273;
+}
+
+.brukerpassord2 {
+    text-align: center;
+    font-size: larger;
+    font-style: oblique;
+}
+.brukerpassord2 input[type=text], input[type=password], input[type=email] {
+    width: 200%;
+    padding: 4px;
+    border: 1px #e39774 solid;
+}
+#venstre2 {
+    flex-basis: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    height: 300px;
+    padding-top: 45px;
+}
+#venstre2 a, #melding a {
+    color: #5c9ead;
+    text-decoration: none;
+    font-size: 150%;
+}
+#venstre2 a:hover, #melding a:hover {
+    color: #326273;
+}
+#venstre2 h3 {
+    font-size: 200%;
+    font-family: AcmeFont, Arial, sans-serif;
+    color: #e39774;
+}
+#melding p {
+    color: #326273;
+    font-weight: bold;
+    font-size: 180%;
+}
+#melding {
+    flex-basis: 100%;
+    text-align: center;
+}
